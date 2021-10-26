@@ -1,0 +1,10 @@
+M552 S-1  ; desconecta wifi
+G4 P5000   ; wait 5000 msec (= 5 sec)
+M552 S0 ;
+G4 P5000   ; wait 5000 msec (= 5 sec)
+M587 S"kapawireless24G" P"P@ndora00"
+M587
+G4 P5000   ; wait 5000 msec (= 5 sec)
+M552 S1  ;  conecta wifi
+M552
+

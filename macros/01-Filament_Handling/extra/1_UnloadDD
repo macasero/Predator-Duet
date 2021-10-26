@@ -1,0 +1,13 @@
+; Unload filament
+T0
+;M291 P"Please wait while the nozzle is being heated up" R"Unloading ..." T5 ; Display message
+;G10 P0 S200 ; Heat up the current tool to 100C
+;M116 ; Wait for the temperatures to be reached
+M291 P"Retracting filament..." R"Unloading ..." T5 ; Display another message
+G1 E5 F100    ;Feed 5mm at 100mm/min
+G1 E-5 F1200 ; Retract 5mm of filament at 1200mm/min
+G1 E-320 F3800 ; Retract 320mmof filament at 3800mm/min
+M400 ; Wait for the moves to finish
+M292 ; Hide the message again
+M84 E0 ; Turn off extruder drives 1 and 2
+;G10 P0 S0 ; Turn off the heater again
